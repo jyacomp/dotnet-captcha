@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <form asp-controller="Home" asp-action="Index">
+        <div class="form-row align-items-center">
+            <div class="col-md-6 sm-2 mb-2">
+                <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text p-0">
+                            <span class="input-group-text p-0">
+                                <img src="data:image/jpeg;base64,@(ViewData["CaptchaImage"])" title="Captcha" />
+                            </span>
+                        </div>
+                    </div>
+                    <input name="captcha" pattern="[a-zA-Z0-9]{5}" class="form-control form-control-lg" autocomplete="off" required />
+                </div>
+                <label for="captcha" class="form-label"></label>
+            </div>
+            <div class="col-lg-6 col-md-6 sm-2 mb-5">
+                <button class="btn btn-secondary btn-lg float-right">Enviar <i class="fa fa-send-o"></i></button>
+            </div>
+        </div>
+    </form>
+</div>
+
